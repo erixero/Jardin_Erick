@@ -1,0 +1,90 @@
+/* ==== PÁGINA DE BIENVENIDA ==== */
+body.inicio {
+  font-family: "Georgia", serif;
+  background-color: #f9faf9;
+  color: #222;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.cabecera-principal {
+  text-align: center;
+  padding: 3rem 1rem 1rem 1rem;
+}
+.cabecera-principal h1 {
+  font-size: 2.5rem;
+  color: #4a7c59;
+}
+.menu-grupos {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.enlace-grupo {
+  text-decoration: none;
+  background-color: #4a7c59;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  transition: background 0.3s;
+}
+.enlace-grupo:hover {
+  background-color: #3a6447;
+}
+.pie-principal {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  background: #f1f1f1;
+}
+
+/* ==== ÍNDICE DE GRUPO ==== */
+body.grupo-pagina {
+  font-family: "Georgia", serif;
+  margin: 0;
+  background-color: #fff;
+}
+.cabecera-grupo {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #eaf3ed;
+}
+.indice-especies {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+.indice-especies ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 600px;
+  width: 100%;
+}
+.indice-especies li {
+  margin: 1rem 0;
+  text-align: center;
+}
+.indice-especies a {
+  text-decoration: none;
+  color: #4a7c59;
+  font-size: 1.2rem;
+  border-bottom: 1px dashed #4a7c59;
+}
+.indice-especies a:hover {
+  color: #2e4d39;
+  border-color: #2e4d39;
+}
+.pie-grupo {
+  text-align: center;
+  padding: 1rem;
+}
+.volver {
+  text-decoration: none;
+  color: #4a7c59;
+}
