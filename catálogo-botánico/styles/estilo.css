@@ -1,140 +1,30 @@
-/* ==== PÁGINA DE BIENVENIDA ==== */
-body.inicio {
-  font-family: "Georgia", serif;
-  background-color: #f9faf9;
-  color: #222;
-  margin: 0;
+/* --- Navegación entre plantas --- */
+.pie-navegacion {
   display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-.cabecera-principal {
-  text-align: center;
-  padding: 3rem 1rem 1rem 1rem;
-}
-.cabecera-principal h1 {
-  font-size: 2.5rem;
-  color: #4a7c59;
-}
-.menu-grupos {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: center;
   gap: 1rem;
+  margin-top: 2rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--borde-suave);
 }
-.enlace-grupo {
-  text-decoration: none;
-  background-color: #4a7c59;
+
+.btn-nav {
+  background-color: var(--color-principal);
   color: #fff;
-  padding: 1rem 2rem;
-  border-radius: 8px;
-  font-size: 1.2rem;
-  transition: background 0.3s;
-}
-.enlace-grupo:hover {
-  background-color: #3a6447;
-}
-.pie-principal {
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-  background: #f1f1f1;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-/* ==== ÍNDICE DE GRUPO ==== */
-body.grupo-pagina {
-  font-family: "Georgia", serif;
-  margin: 0;
-  background-color: #fff;
-}
-.cabecera-grupo {
-  text-align: center;
-  padding: 2rem 1rem;
-  background-color: #eaf3ed;
-}
-.indice-especies {
-  padding: 2rem;
-  display: flex;
-  justify-content: center;
-}
-.indice-especies ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  max-width: 600px;
-  width: 100%;
-}
-.indice-especies li {
-  margin: 1rem 0;
-  text-align: center;
-}
-.indice-especies a {
-  text-decoration: none;
-  color: #4a7c59;
-  font-size: 1.2rem;
-  border-bottom: 1px dashed #4a7c59;
-}
-.indice-especies a:hover {
-  color: #2e4d39;
-  border-color: #2e4d39;
-}
-.pie-grupo {
-  text-align: center;
-  padding: 1rem;
-}
-.volver {
-  text-decoration: none;
-  color: #4a7c59;
+.btn-nav:hover {
+  background-color: var(--color-secundario);
 }
 
-/* Iconos */
-/* Contenedor general de iconos */
-.icono {
-  display: inline-block;
-  width: 2.5rem;          /* Tamaño base (ajustable según diseño) */
-  height: auto;
-  vertical-align: middle;
-  fill: currentColor;     /* Permite cambiar color con color de texto */
-  transition: transform 0.3s ease;
-}
-
-/* Para evitar que los SVG se escalen fuera del contenedor */
-.icono svg, 
-.icono img {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-
-/* Escalado fluido en pantallas pequeñas */
-@media (max-width: 768px) {
-  .icono {
-    width: 2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .icono {
-    width: 1.6rem;
-  }
-}
-
-/* Efecto visual al pasar el cursor */
-.icono:hover {
-  transform: scale(1.1);
-}
-/* Icono y titulo */
-.icono-titulo {
-  display: flex;
-  align-items: center; /* centra verticalmente */
-  gap: 10px; /* espacio entre icono y texto */
-}
-
-.icono-titulo img {
-  width: 24px; /* ajusta el tamaño del icono */
-  height: auto;
+.btn-nav.principal {
+  background-color: #3e705a;
+  font-weight: bold;
 }

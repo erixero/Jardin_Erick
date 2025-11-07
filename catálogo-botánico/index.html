@@ -1,29 +1,34 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Catálogo Botánico de Casa Erick</title>
-  <link rel="stylesheet" href="styles/estilo.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo Botánico</title>
+  <link rel="stylesheet" href="styles/estilo.css" />
 </head>
 
-<body class="inicio">
-  <header class="cabecera-principal">
-    <h1>Catálogo Botánico de Casa</h1>
-    <p>Explora todas las especies del jardín organizadas por su tipo botánico.</p>
+<body>
+  <header class="encabezado-principal">
+    <h1>CATÁLOGO BOTÁNICO</h1>
+    <p>Identificación y cuidados de las plantas del jardín</p>
   </header>
 
-  <main class="menu-grupos">
-    <a href="grupos/ornamentales-con-flor.html" class="enlace-grupo">🌸 Ornamentales con flor</a>
-    <a href="#" class="enlace-grupo deshabilitado">🌿 Aromáticas y medicinales (pendiente)</a>
-    <a href="#" class="enlace-grupo deshabilitado">🏡 Ornamentales de interior (pendiente)</a>
-    <a href="#" class="enlace-grupo deshabilitado">🍊 Frutales en maceta (pendiente)</a>
-    <a href="#" class="enlace-grupo deshabilitado">🌳 Árboles ornamentales y de sombra (pendiente)</a>
-    <a href="#" class="enlace-grupo deshabilitado">🌱 Enredaderas y trepadoras (pendiente)</a>
+  <main class="contenido-index">
+    <section class="grupo-listado">
+      <button class="btn-nav principal" onclick="window.location.href='grupos/ornamentales-con-flor.html'">
+        <h2><img src="iconos/flor.svg" alt="" class="icono"> Ornamentales con flor</h2>
+      </button>
+    </section>
+
+    <section class="grupo-listado">
+      <button class="btn-nav principal" onclick="window.location.href='grupos/aromaticas-medicinales.html'">
+        <h2><img src="iconos/hoja.svg" alt="" class="icono"> Aromáticas y medicinales</h2>
+      </button>
+    </section>
   </main>
 
-  <footer class="pie-principal">
-    <p>&copy; 2025 Catálogo Botánico Personal · Desarrollado con Plant GPT</p>
+  <footer class="pie-index">
+    <p>📘 Proyecto de Catálogo Botánico — 2025</p>
   </footer>
 </body>
 </html>
