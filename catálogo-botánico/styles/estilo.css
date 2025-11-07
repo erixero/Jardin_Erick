@@ -88,3 +88,53 @@ body.grupo-pagina {
   text-decoration: none;
   color: #4a7c59;
 }
+
+/* Iconos */
+/* Contenedor general de iconos */
+.icono {
+  display: inline-block;
+  width: 2.5rem;          /* Tamaño base (ajustable según diseño) */
+  height: auto;
+  vertical-align: middle;
+  fill: currentColor;     /* Permite cambiar color con color de texto */
+  transition: transform 0.3s ease;
+}
+
+/* Para evitar que los SVG se escalen fuera del contenedor */
+.icono svg, 
+.icono img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Escalado fluido en pantallas pequeñas */
+@media (max-width: 768px) {
+  .icono {
+    width: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .icono {
+    width: 1.6rem;
+  }
+}
+
+/* Efecto visual al pasar el cursor */
+.icono:hover {
+  transform: scale(1.1);
+}
+/* Icono y titulo */
+.icono-titulo {
+  display: flex;
+  align-items: center; /* centra verticalmente */
+  gap: 10px; /* espacio entre icono y texto */
+}
+
+.icono-titulo img {
+  width: 24px; /* ajusta el tamaño del icono */
+  height: auto;
+}
