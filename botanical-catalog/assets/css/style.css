@@ -1,0 +1,347 @@
+/* ==========================================================
+   Catálogo Botánico - Hoja de estilos principal
+   ----------------------------------------------------------
+   Estilo unificado para:
+   - Página principal (index)
+   - Grupos de plantas
+   - Fichas individuales de especies
+   ----------------------------------------------------------
+   Autor: [Tu nombre]
+   Año: 2025
+   ========================================================== */
+
+
+/* ----------------------------------------------------------
+   RESET Y VARIABLES GLOBALES
+   ---------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-color: #2d572c;
+  --secondary-color: #4e794c;
+  --accent-color: #8ec07f;
+  --text-color: #222;
+  --white: #ffffff;
+  --background: #f4f7f3;
+  --shadow: rgba(0, 0, 0, 0.15);
+  --radius: 14px;
+  --transition: all 0.25s ease;
+  --font-main: "Segoe UI", Roboto, sans-serif;
+}
+
+
+/* ----------------------------------------------------------
+   CONFIGURACIÓN BASE
+   ---------------------------------------------------------- */
+body {
+  font-family: var(--font-main);
+  color: var(--text-color);
+  background-color: var(--background);
+  line-height: 1.6;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Fondo general y fondo de index */
+body {
+  background: url("../backgrounds/general.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.index-page {
+  background: url("../backgrounds/index.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Filtro de opacidad para index (ligero, deja ver el fondo) */
+body.index-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(1.5px);
+  z-index: -1;
+}
+
+
+/* ----------------------------------------------------------
+   ENCABEZADOS GENERALES
+   ---------------------------------------------------------- */
+.main-header {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+  color: var(--main-color);
+  background: rgba(255, 255, 255, 0.1); /* más transparente */
+  backdrop-filter: blur(2px);
+}
+
+.main-header h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.main-header p {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  color: var(--secondary-color);
+  font-weight: 700;
+}
+
+
+/* ----------------------------------------------------------
+   TARJETAS DE GRUPOS (index y pages de grupos)
+   ---------------------------------------------------------- */
+.group-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+  padding: 3rem 1rem;
+}
+
+.group-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: clamp(240px, 26vw, 320px);
+  text-align: center;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius);
+  padding: 2rem 1.5rem;
+  color: var(--main-color);
+  box-shadow: 0 4px 12px var(--shadow);
+  border: 1px solid rgba(46, 64, 50, 0.15);
+  transition: var(--transition);
+}
+
+.group-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.group-icon {
+  width: clamp(60px, 8vw, 90px);
+  height: auto;
+  margin-bottom: 1rem;
+  transition: transform 0.25s ease;
+}
+
+.group-item:hover .group-icon {
+  transform: scale(1.1);
+}
+
+.group-item h2 {
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  font-weight: 700;
+  color: var(--main-color);
+}
+
+
+/* ----------------------------------------------------------
+   FICHAS DE ESPECIES
+   ---------------------------------------------------------- */
+.species-page {
+  padding: 2rem 1rem 4rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Galería de imágenes */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.gallery figure {
+  text-align: center;
+}
+
+.gallery img {
+  width: clamp(250px, 45vw, 380px);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px var(--shadow);
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.03);
+}
+
+.gallery figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--main-color);
+  font-weight: 600;
+}
+
+/* Bloques de información */
+.info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.info-block {
+  background: rgba(255, 255, 255, 0.9);
+  border-left: 5px solid var(--accent-color);
+  padding: 1.2rem 1.4rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.icon-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.icon {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #fff;
+  padding: 6px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
+}
+
+.icon-title h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--main-color);
+}
+
+.info-block p {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Último bloque (Consejos) */
+.info-block:last-of-type {
+  border-left-color: #6aa46a;
+}
+
+.info-block:last-of-type p {
+  color: #2b4a2b;
+  font-style: italic;
+}
+
+
+/* ----------------------------------------------------------
+   PIE DE PÁGINA
+   ---------------------------------------------------------- */
+.main-footer,
+.footer-nav {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.75);
+  padding: 1.5rem;
+  color: var(--main-color);
+  font-weight: 700;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.footer-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn-nav {
+  background: var(--main-color);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  padding: 0.9rem 1.6rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-nav:hover {
+  background: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+.btn-nav.main {
+  background: var(--secondary-color);
+}
+
+.btn-nav.main:hover {
+  background: var(--accent-color);
+}
+
+
+/* ----------------------------------------------------------
+   MODAL DE IMÁGENES (Ampliar fotos)
+   ---------------------------------------------------------- */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.imagen-ampliada {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.cerrar {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  color: var(--white);
+  font-size: 2rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+
+/* ----------------------------------------------------------
+   RESPONSIVIDAD
+   ---------------------------------------------------------- */
+@media (max-width: 768px) {
+  .group-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .group-item {
+    width: 85%;
+  }
+
+  .btn-nav {
+    width: 80%;
+    padding: 1rem;
+  }
+
+  .gallery img {
+    width: 90%;
+  }
+
+  .main-header h1 {
+    font-size: 2.2rem;
+  }
+}

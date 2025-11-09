@@ -80,9 +80,9 @@ botanical-catalog/
 │ │ ├── propagacion.svg
 │ │ ├── usos.svg
 │ │ └── default.svg
-│ ├── images/
-│ │ ├── background-index.jpg
-│ │ └── background-groups.jpg
+│ ├── backgrounds/
+│ │ ├── index.jpg
+│ │ └── general.jpg
 │ └── photos/
 │ ├── rosa_1.jpg
 │ ├── rosa_2.jpg
