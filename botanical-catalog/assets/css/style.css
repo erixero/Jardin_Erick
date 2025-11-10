@@ -1,13 +1,14 @@
 /* ==========================================================
    Catálogo Botánico - Hoja de estilos principal
    ----------------------------------------------------------
-   Estilo unificado para:
-   - Página principal (index)
-   - Grupos de plantas
-   - Fichas individuales de especies
-   ----------------------------------------------------------
    Autor: [Tu nombre]
    Año: 2025
+   Descripción:
+   Estilos globales para el Catálogo Botánico.
+   Aplica a:
+   - Página principal (index)
+   - Grupos de plantas
+   - Fichas de especies
    ========================================================== */
 
 
@@ -35,38 +36,49 @@
 
 
 /* ----------------------------------------------------------
-   CONFIGURACIÓN BASE
+   CONFIGURACIÓN BASE Y FONDOS
    ---------------------------------------------------------- */
 body {
   font-family: var(--font-main);
   color: var(--text-color);
-  background-color: var(--background);
+  background: url("../backgrounds/general.jpg") no-repeat center center fixed;
+  background-size: cover;
   line-height: 1.6;
   font-weight: 600;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
 }
 
-/* Fondo general y fondo de index */
-body {
-  background: url("../backgrounds/general.jpg") no-repeat center center fixed;
-  background-size: cover;
-}
-
+/* Fondo específico para index */
 body.index-page {
   background: url("../backgrounds/index.jpg") no-repeat center center fixed;
   background-size: cover;
 }
 
-/* Filtro de opacidad para index (ligero, deja ver el fondo) */
-body.index-page::before {
+/* --- Capa de contraste global --- */
+body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(1.5px);
+  background: rgba(0, 0, 0, 0.35); /* oscurece ligeramente el fondo */
   z-index: -1;
+  pointer-events: none;
+}
+
+/* --- Capa más clara para la página principal --- */
+body.index-page::before {
+  background: rgba(255, 255, 255, 0.25); /* aclara ligeramente el fondo */
+}
+
+/* --- Texto con mezcla automática de contraste --- */
+.main-header,
+.group-container,
+.main-footer {
+  mix-blend-mode: difference;
+  color: #fff;
 }
 
 
@@ -76,9 +88,7 @@ body.index-page::before {
 .main-header {
   text-align: center;
   padding: 3rem 1rem 2rem;
-  color: var(--main-color);
-  background: rgba(255, 255, 255, 0.1); /* más transparente */
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(3px);
 }
 
 .main-header h1 {
@@ -89,13 +99,12 @@ body.index-page::before {
 
 .main-header p {
   font-size: clamp(1rem, 1.5vw, 1.2rem);
-  color: var(--secondary-color);
   font-weight: 700;
 }
 
 
 /* ----------------------------------------------------------
-   TARJETAS DE GRUPOS (index y pages de grupos)
+   TARJETAS DE GRUPOS (index y páginas de grupos)
    ---------------------------------------------------------- */
 .group-container {
   display: flex;
@@ -113,19 +122,20 @@ body.index-page::before {
   width: clamp(240px, 26vw, 320px);
   text-align: center;
   text-decoration: none;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.65);
   border-radius: var(--radius);
   padding: 2rem 1.5rem;
   color: var(--main-color);
   box-shadow: 0 4px 12px var(--shadow);
   border: 1px solid rgba(46, 64, 50, 0.15);
   transition: var(--transition);
+  font-weight: 700;
 }
 
 .group-item:hover {
   transform: translateY(-6px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .group-icon {
@@ -141,7 +151,6 @@ body.index-page::before {
 
 .group-item h2 {
   font-size: clamp(1.1rem, 1.8vw, 1.4rem);
-  font-weight: 700;
   color: var(--main-color);
 }
 
@@ -248,7 +257,7 @@ body.index-page::before {
 .main-footer,
 .footer-nav {
   text-align: center;
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.4);
   padding: 1.5rem;
   color: var(--main-color);
   font-weight: 700;
@@ -259,6 +268,7 @@ body.index-page::before {
   display: flex;
   justify-content: center;
   gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .btn-nav {
@@ -289,7 +299,7 @@ body.index-page::before {
 
 
 /* ----------------------------------------------------------
-   MODAL DE IMÁGENES (Ampliar fotos)
+   MODAL DE IMÁGENES (ampliar fotos)
    ---------------------------------------------------------- */
 .modal {
   display: none;
