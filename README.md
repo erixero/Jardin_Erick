@@ -110,3 +110,6 @@ botanical-catalog/
 ├── lemon_tree_pot.html
 ├── banana_tree.html
 └── cypress_tree.html
+
+**Free Icons** - https://www.flaticon.es/
+**Free Converter** - https://www.freeconvert.com/
