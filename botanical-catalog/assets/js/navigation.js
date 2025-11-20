@@ -25,3 +25,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+// Navegación por teclado: volver atrás con Backspace cuando no se está escribiendo
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Backspace") {
+
+        const tag = event.target.tagName.toLowerCase();
+        const editable = event.target.isContentEditable;
+
+        // Solo retrocede si NO se está editando texto
+        if (tag !== "input" && tag !== "textarea" && !editable) {
+            event.preventDefault(); 
+            history.back();
+        }
+    }
+});
