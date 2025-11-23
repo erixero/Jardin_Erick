@@ -5,19 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Catálogo Botánico</title>
 
-  <!-- Estilos -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- CSS modular -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/utilities.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
 
-  <!-- Script general de navegación -->
+  <!-- JS global -->
+  <script src="assets/js/site-header.js" defer></script>
+  <script src="assets/js/site-footer.js" defer></script>
   <script src="assets/js/navigation.js" defer></script>
 </head>
 
-<body class="index-page">
-  <!-- Encabezado principal -->
-  <header class="main-header">
-    <h1>Catálogo Botánico</h1>
-    <p><strong>Explora las especies de tu jardín organizadas por grupos botánicos</strong></p>
-  </header>
+<body class="page page--welcome">
+
+  <!-- Fondo general controlado vía CSS -->
+  <div class="page-background page-background--index"></div>
+
+  <!-- HEADER (Web Component) -->
+  <site-header></site-header>
 
   <!-- Contenedor principal de grupos -->
   <main class="group-container">
@@ -52,11 +60,14 @@
       <h2>Suculentas y Cactus</h2>
     </a>
 
+    <!-- Navegación principal -->
+    <section class="nav-grid">
+
   </main>
 
   <!-- Pie de página -->
-  <footer class="main-footer">
-    <p><strong>© 2025 Catálogo Botánico — Proyecto personal de jardinería</strong></p>
-  </footer>
+  <!-- FOOTER (Web Component) -->
+  <site-footer></site-footer>
+
 </body>
 </html>

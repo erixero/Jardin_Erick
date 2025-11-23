@@ -1,0 +1,12 @@
+.page-background {
+  position: fixed;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  opacity: 0.85;
+}
+
+.page-background--index {
+  background-image: url("../backgrounds/index.jpg");
+}
